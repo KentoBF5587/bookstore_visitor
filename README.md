@@ -123,16 +123,34 @@ MVPリリース
 
 ## ■ 機能の実装予定
 
-GoogleMapAPI→書店一覧を表示
+▪️開発環境：Docker
+
+▪️サーバーサイド：Ruby on Rails 7系
+
+Ruby 3.2.2　Rails 7.2.3.2
+
+※RubyとRailsのバージョンは今回はローカルに入っていたものを書いてみました。
+
+▪️フロントエンド：Hotwire
+
+▪️CSSフレームワーク：Bootstrap5系
+
+▪️WebAPI：GoogleMapAPI→書店一覧を表示
 
 楽天ブックス書籍検索APIもしくはGoogle Books APIs→買った本を検索ために必要
 
+▪️インフラ
+
+Webアプリケーションサーバー：Fly.ioもしくはHeroku→PaaS
+
+ファイルサーバー：今の所予定なし（画像を大量に使うとなるとAWS S3？）
+
+データベースサーバ：PostgreSQL→本番環境にも使えるSQL
+
+▪️その他
+
+VSC：GitHub
+
+rubocop
+
 Xログイン、LINEログイン→ログイン機能に使うことが出来れば良さそう
-
-PostgreSQL→本番環境にも使えるSQL
-
-Fly.ioもしくはHeroku→PaaS
-
-Bootstrap5系→CSSフレームワーク
-
-JavaScript？→本屋レビューをポップな感じで出力できる何か

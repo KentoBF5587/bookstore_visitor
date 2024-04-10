@@ -154,3 +154,6 @@ VSC：GitHub
 rubocop
 
 Xログイン、LINEログイン→ログイン機能に使うことが出来れば良さそう
+
+### 画面遷移図
+Figma:https://www.figma.com/file/e1JOvfTRraI07AInM1CVNz/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0-1&mode=design&t=r8YJaMB9n1libCFU-0

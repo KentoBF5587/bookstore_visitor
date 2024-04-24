@@ -129,8 +129,6 @@ MVPリリース
 
 Ruby 3.2.2　Rails 7.1.3.2
 
-※RubyとRailsのバージョンは今回はローカルに入っていたものを書いてみました。
-
 ▪️フロントエンド：Hotwire
 
 ▪️CSSフレームワーク：Bootstrap5系

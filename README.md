@@ -127,9 +127,7 @@ MVPリリース
 
 ▪️サーバーサイド：Ruby on Rails 7系
 
-Ruby 3.2.2　Rails 7.2.3.2
-
-※RubyとRailsのバージョンは今回はローカルに入っていたものを書いてみました。
+Ruby 3.2.2　Rails 7.1.3.2
 
 ▪️フロントエンド：Hotwire
 
@@ -157,3 +155,6 @@ Xログイン、LINEログイン→ログイン機能に使うことが出来れ
 
 ### 画面遷移図
 Figma:https://www.figma.com/file/e1JOvfTRraI07AInM1CVNz/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0-1&mode=design&t=r8YJaMB9n1libCFU-0
+
+### ER図
+draw.io: https://app.diagrams.net/#G1Dd2jxO4JVnGLgIRyG7FojvgRva0GJIDr#%7B%22pageId%22%3A%22C5RBs43oDa-KdzZeNtuy%22%7D

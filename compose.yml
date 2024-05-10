@@ -1,25 +1,29 @@
+version: '3'
 services:
   db:
-    image: postgres:latest
-    platform: linux/amd64
+    image: postgres
+    restart: always
     environment:
       TZ: Asia/Tokyo
       POSTGRES_PASSWORD: password
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgresql_data:/var/lib/postgresql
     ports:
-      - 5433:5432
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d bookstore_visitor_development -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   web:
     build:
       context: .
-      args:
-        USER: plugh
-        MODE: production
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+      dockerfile: Dockerfile.dev
+    command: bash -c "bundle install && bundle exec rails db:prepare && rm -f tmp/pids/server.pid && ./bin/dev"
     tty: true
     stdin_open: true
     volumes:
-      - .:/app
+      - .:/bookstore_visitor
       - bundle_data:/usr/local/bundle:cached
       - node_modules:/app/node_modules
     environment:
@@ -27,8 +31,9 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 volumes:
-  postgres_data:
   bundle_data:
+  postgresql_data:
   node_modules:

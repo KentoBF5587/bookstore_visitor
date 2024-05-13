@@ -1,0 +1,12 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  Include:
+    - '**/*.rb'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
+    - !ruby/regexp /old_and_unused\.rb$/

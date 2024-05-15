@@ -55,7 +55,6 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
-  gem "rubocop-checkstyle_formatter", require: false
 end
 
 group :development do

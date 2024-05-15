@@ -7,3 +7,34 @@ ja:
     label:
       email: メールアドレス
       password: パスワード
+  users:
+    new:
+      title: ユーザー作成
+      to_login_page: ログインページへ
+    create:
+      success: ユーザー登録に成功しました
+      failure: ユーザー登録に失敗しました
+  user_sessions:
+    new:
+      title: ログイン
+      login: ログイン
+      to_register_page: 新規登録ページへ
+      password_forget: パスワードをお忘れの方はこちら
+    create:
+      success: ログインしました
+      failure: ログインに失敗しました
+    destroy:
+      success: ログアウトしました  
+  header:
+    login: ログイン
+    logout: ログアウト
+    find_bookstore: 本屋を探す
+    diagnostic: 診断機能
+    how_to_use: このアプリの使い方
+    profile: プロフィール
+    wanna_go_bookstore: 行きたい本屋
+    favorite_bookstore: おすすめの本屋
+  footer:
+    terms_of_service: 利用規約
+    inquiry: お問い合わせ
+    privacy_policy: プライバシーポリシー

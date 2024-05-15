@@ -1,12 +1,12 @@
 ja:
   activerecord:
-    model:
+    models:
       user: ユーザー
-    attribute:
+    attributes:
       user:
         name: 名前
         email: メールアドレス
-        profile: プロフィール文
+        profile: プロフィール
         password: パスワード
         password_confirmation: パスワード確認
       bookstore:

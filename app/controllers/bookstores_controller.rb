@@ -1,8 +1,8 @@
 class BookstoresController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
-
+  
   def index
-    @bookstores = Bookstore.all.order(created_at: desc)
+    @bookstores = Bookstore.includes(:user).order(created_at: :desc)
   end
 
   def new
@@ -10,25 +10,24 @@ class BookstoresController < ApplicationController
   end
 
   def create
-    @bookstore = Bookstore.new(:bookstore_params)
+    @bookstore = current_user.bookstores.build(bookstore_params)
     if @bookstore.save
-      redirect_to bookstores_path, success: "あああ"
+      redirect_to bookstores_path, success: t('.success')
     else
-      flash.now[:danger] = "作れてないよ"
+      flash.now[:danger] = t('.failure')
       render :new, status: :unprocessable_entity
+    end
   end
 
-  def show
-    @bookstore = Bookstore.find(params[:id])
-  end
+  def show; end
 
   def edit; end
 
   def update
     if @bookstore.update(bookstore_params)
-      redirect_to bookstore_url(@bookstore), success: "いええええええ！"
+      redirect_to bookstore_url(@bookstore), success: t('.success')
     else
-      flash.now[:danger] = "ノオオオオオ"
+      flash.now[:danger] = t('.failure')
       render :edit, status: :unprocessable_entity
     end
   end

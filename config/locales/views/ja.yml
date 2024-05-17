@@ -1,4 +1,7 @@
 ja:
+  defaults:
+    flash_message:
+      require_login: ログインしてください
   helpers:
     submit:
       create: 作成
@@ -24,7 +27,23 @@ ja:
       success: ログインしました
       failure: ログインに失敗しました
     destroy:
-      success: ログアウトしました  
+      success: ログアウトしました
+  bookstores:
+    index:
+      title: 書店情報一覧
+      to_create_bookstore: 新しく書店情報を追加する
+    new:
+      title: 書店情報新規作成
+    create:
+      success: 新しく書店の情報の追加に成功しました
+      failure: 書店の情報を作成できませんでした
+    show:
+      title: 書店情報詳細
+    edit:
+      title: 書店情報編集
+    update:
+      success: 書店の情報を更新しました
+      failure: 書店の情報を更新できませんでした
   header:
     login: ログイン
     logout: ログアウト

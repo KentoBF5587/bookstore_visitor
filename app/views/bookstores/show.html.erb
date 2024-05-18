@@ -1,0 +1,24 @@
+<h1><%= t('.title') %></h1>
+
+<div class="container">
+
+  <h3><%= @bookstore.name %></h3>
+  <i class="bi bi-bookmark"></i>
+  <%= link_to edit_bookstore_path(@bookstore), class: "button-edit-#{@bookstore.id}" do %>
+    <i class="bi bi-pencil"></i>
+  <% end %>
+  <%= link_to bookstore_path(@bookstore), class: "button-delete-#{@bookstore.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.flash_message.delete') } do %>
+    <i class="bi bi-trash"></i>
+  <% end %>
+
+  <div>
+    場所：<%= @bookstore.address %>
+  </div>
+  <div>
+    どんなところ？
+  </div>
+
+  <%= link_to "この本屋のおすすめ文を書いてみる", "#" %>
+
+  
+</div>

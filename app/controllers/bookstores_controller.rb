@@ -1,14 +1,20 @@
 class BookstoresController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
   before_action :set_bookstore, only: %i[edit update destroy]
-  
+
   def index
     @bookstores = Bookstore.includes(:user).order(created_at: :desc)
+  end
+
+  def show
+    @bookstore = Bookstore.find(params[:id])
   end
 
   def new
     @bookstore = Bookstore.new
   end
+
+  def edit; end
 
   def create
     @bookstore = current_user.bookstores.build(bookstore_params)
@@ -19,12 +25,6 @@ class BookstoresController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  def show
-    @bookstore = Bookstore.find(params[:id])
-  end
-
-  def edit; end
 
   def update
     if @bookstore.update(bookstore_params)
@@ -43,7 +43,7 @@ class BookstoresController < ApplicationController
   private
 
   def bookstore_params
-    params.require(:bookstore).permit(:name, :address)
+    params.require(:bookstore).permit(:name, :address, tag_ids: [])
   end
 
   def set_bookstore

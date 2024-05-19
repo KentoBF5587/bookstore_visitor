@@ -8,6 +8,10 @@
       <%= f.label :address, class: "form-label" %>
       <%= f.text_field :address, class: "form-control" %>
     </div>
+    <div class="mb-3">
+      <p>どんなものが当てはまりますか？(複数タグを選びたい場合はshiftキーを押しながら選択してください)</p>
+      <%= f.collection_select :tag_ids, Tag.all, :id, :name, {}, { multiple: true, size: 10, name: "bookstore[tag_ids][]" } %>
+    </div>
 
-    <%= f.submit "作成", class: "btn btn-primary" %>
+    <%= f.submit nil, class: "btn btn-primary" %>
     <% end %>

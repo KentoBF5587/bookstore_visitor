@@ -1,9 +1,11 @@
 <h1><%= t('.title') %></h1>
-
-<% if @bookstores.present? %>
-  <%= render @bookstores %>
-  <% else %>
-    <div class="mb-3">書店情報がありません</div>
-  <% end %>
-  <div class="text-center">
-    <%= link_to t('.to_create_bookstore'), new_bookstore_path %>
+  <div class="row">
+    <% if @bookstores.present? %>
+      <%= render @bookstores %>
+    <% else %>
+      <div class="mb-3">書店情報がありません</div>
+    <% end %>
+    <div class="text-center">
+      <%= link_to t('.to_create_bookstore'), new_bookstore_path %>
+    </div>
+  </div>

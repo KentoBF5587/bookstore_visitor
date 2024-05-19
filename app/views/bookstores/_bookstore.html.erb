@@ -1,10 +1,14 @@
-<div class="card"> 
-  <div class="card-header">
-    書店情報No.<%= bookstore.id %>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title"><%= bookstore.name %></h5>
-    <p class="card-text"><%= bookstore.address %></p>
-    <%= link_to t('bookstores.index.to_show_bookstore'), bookstore_path(bookstore) , class: "btn btn-primary"%> 
+<div class="col-sm-12 col-lg-4 mb-3">
+  <div id="bookstore-id-<%= bookstore.id %>">
+    <div class="card"> 
+      <div class="card-header">
+        書店情報No.<%= bookstore.id %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= bookstore.name %></h5>
+        <p class="card-text"><%= bookstore.address %></p>
+        <%= link_to t('bookstores.index.to_show_bookstore'), bookstore_path(bookstore) , class: "btn btn-primary"%> 
+      </div>
+    </div>
   </div>
 </div>

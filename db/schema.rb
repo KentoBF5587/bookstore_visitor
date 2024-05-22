@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_18_075745) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_20_023835) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_18_075745) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_bookstores_on_user_id"
+  end
+
+  create_table "store_reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "bookstore_id", null: false
+    t.date "date_entered", null: false
+    t.string "opportunity", null: false
+    t.string "first_visit", null: false
+    t.string "favorite_reason", null: false
+    t.string "free_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bookstore_id"], name: "index_store_reviews_on_bookstore_id"
+    t.index ["user_id"], name: "index_store_reviews_on_user_id"
   end
 
   create_table "tag_relations", force: :cascade do |t|
@@ -55,6 +69,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_18_075745) do
   end
 
   add_foreign_key "bookstores", "users"
+  add_foreign_key "store_reviews", "bookstores"
+  add_foreign_key "store_reviews", "users"
   add_foreign_key "tag_relations", "bookstores"
   add_foreign_key "tag_relations", "tags"
 end

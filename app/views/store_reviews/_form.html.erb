@@ -1,0 +1,34 @@
+<%= form_with model: [bookstore, store_review], local: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="mb-3">
+    <%= @bookstore.name %>のおすすめ文
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :date_entered, class: "form-label" %>
+    <%= f.date_select :date_entered, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :opportunity, class: "form-label" %>
+    <%= f.text_area :opportunity, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :first_visit, class: "form-label" %>
+    <%= f.text_area :first_visit, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :favorite_reason, class: "form-label" %>
+    <%= f.text_area :favorite_reason, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :free_description, class: "form-label" %>
+    <%= f.text_area :free_description, class: "form-control" %>
+  </div>
+
+
+  <%= f.submit nil, class: "btn btn-primary" %>
+<% end %>

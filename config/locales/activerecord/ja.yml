@@ -2,7 +2,8 @@ ja:
   activerecord:
     models:
       user: ユーザー
-      bookstore: 書店
+      bookstore: 本屋
+      store_review: 本屋レビュー
     attributes:
       user:
         name: 名前
@@ -11,7 +12,11 @@ ja:
         password: パスワード
         password_confirmation: パスワード確認
       bookstore:
-        name: 書店の名前
-        address: 書店の所在地
+        name: 本屋の名前
+        address: 本屋の所在地
       store_review:
-        date_enterd: 出会った日
+        date_entered: おすすめ文作成日 
+        opportunity: 行こうと思ったきっかけは何ですか？
+        first_visit: 初めて行ったのはいつ頃ですか？
+        favorite_reason: どんなところが好きですか？
+        free_description: この本屋さんへの愛があれば自由にお書き下さい

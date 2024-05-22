@@ -48,6 +48,9 @@ ja:
       failure: 書店の情報を更新できませんでした
     destroy:
       success: 本屋の情報を削除しました
+  store_reviews:
+    new:
+      title: 本屋レビュー新規作成
   header:
     login: ログイン
     logout: ログアウト

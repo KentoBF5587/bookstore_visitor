@@ -23,8 +23,18 @@
     <% end %>
     <% end %>
   </div>
+
+  <div class="row">
+    <h3>この本屋のおすすめ文</h3>
+    <% if @store_reviews.present? %>
+    <%= render @store_reviews %>
+    <% else %>
+    <div class="mb-3">まだおすすめ文がありません</div>
+    <% end %>
+    </div>
+
   <div>
-  <%= link_to "この本屋のおすすめ文を書いてみる", "#" %>
+  <%= link_to "この本屋のおすすめ文を書いてみる", new_bookstore_store_review_path(@bookstore) %>
   </div>
   <%= link_to "本屋一覧へ", bookstores_path %>
 

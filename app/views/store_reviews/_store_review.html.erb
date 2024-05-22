@@ -1,0 +1,13 @@
+<div class="col-sm-12 col-lg-4 mb-3">
+  <div id="store_review-id-<%= store_review.id %>">
+    <div class="card">
+      <div class="card-header">
+        おすすめ文
+      </div>
+      <div class="card-body">
+      <%= store_review.user.name %>のレビュー
+      <%= link_to "このおすすめ文を読む", store_review_path(store_review), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<div>

@@ -8,6 +8,7 @@ class BookstoresController < ApplicationController
 
   def show
     @bookstore = Bookstore.find(params[:id])
+    @store_reviews = @bookstore.store_reviews
   end
 
   def new

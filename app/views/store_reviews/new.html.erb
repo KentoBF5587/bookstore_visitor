@@ -1,6 +1,9 @@
 <div class="container">
   <div class="col-lg-8 offset-lg-1">
     <h1><%= t('.title') %></h1>
+    <div class="mb-3">
+    <%= @bookstore.name %>さんのおすすめ文
+  </div>
     <%= render "form", { store_review: @store_review, bookstore: @bookstore } %>
   </div>
 </div>

@@ -1,8 +1,7 @@
-<%= form_with model: [bookstore, store_review], local: true do |f| %>
+<%= form_with model: store_review.persisted? ? store_review : [bookstore, store_review], local: true do |f| %>
   <%= render "shared/error_messages", object: f.object %>
-  <div class="mb-3">
-    <%= @bookstore.name %>のおすすめ文
-  </div>
+
+  <%= f.hidden_field :bookstore_id, value: @store_review.bookstore_id %>
 
   <div class="mb-3">
     <%= f.label :date_entered, class: "form-label" %>
@@ -26,9 +25,8 @@
 
   <div class="mb-3">
     <%= f.label :free_description, class: "form-label" %>
-    <%= f.text_area :free_description, class: "form-control" %>
+    <%= f.text_area :free_description, class: "form-control", rows: "10" %>
   </div>
-
 
   <%= f.submit nil, class: "btn btn-primary" %>
 <% end %>

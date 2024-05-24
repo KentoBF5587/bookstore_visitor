@@ -51,6 +51,12 @@ ja:
   store_reviews:
     new:
       title: 本屋レビュー新規作成
+    create:
+      success: 新しく本屋のレビューを投稿しました
+    update:
+      success: 本屋のレビューを更新しました
+    destroy:
+      success: 本屋のレビューを削除しました
   header:
     login: ログイン
     logout: ログアウト

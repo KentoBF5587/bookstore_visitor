@@ -1,4 +1,8 @@
+<div class="container">
 <h1><%= t('.title') %></h1>
+  <div>
+    <%= render "search", q: @q, url: bookstores_path %>
+  </div>
   <div class="row">
     <% if @bookstores.present? %>
       <%= render @bookstores %>
@@ -9,3 +13,4 @@
       <%= link_to t('.to_create_bookstore'), new_bookstore_path %>
     </div>
   </div>
+</div>

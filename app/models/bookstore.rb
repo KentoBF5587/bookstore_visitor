@@ -6,4 +6,12 @@ class Bookstore < ApplicationRecord
   has_many :store_reviews, dependent: :destroy
   has_many :tag_relations, dependent: :destroy
   has_many :tags, through: :tag_relations
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[name address]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    []
+  end
 end

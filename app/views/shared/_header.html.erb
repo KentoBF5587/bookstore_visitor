@@ -5,17 +5,17 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ms-auto main-nav align-items-center">
     <li class="nav-item">
-      <%= link_to t('header.find_bookstore'), "#", class: "nav-link" %>
+      <%= link_to t('header.find_bookstore'), bookstores_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-    <%= link_to t('header.diagnostic'), "#", class: "nav-link" %>
+    <%= link_to t('header.diagnostic'), "#", class: 'nav-link' %>
     </li>
     <li class="nav-item">
-    <%= link_to t('header.how_to_use'), "#", class: "nav-link" %>
+    <%= link_to t('header.how_to_use'), "#", class: 'nav-link' %>
     </li>
 
     <li class="nav-item dropdown dropdown-slide">
-      <%= link_to "#{current_user.name}", "#", class: "nav-link dropdown-toggle", data: { bs_toggle: 'dropdown'}, aria: { haspopop: 'true', expand: 'false' }, id: 'header-board-menu' %>
+      <%= link_to "#{current_user.name}", "#", class: 'nav-link dropdown-toggle', data: { bs_toggle: 'dropdown'}, aria: { haspopop: 'true', expand: 'false' }, id: 'header-board-menu' %>
      <div class="dropdown-menu dropdown-menu-end">
        <%= link_to t('header.profile'), "#", class: 'dropdown-item' %>
        <%= link_to t('header.wanna_go_bookstore'), "#", class: 'dropdown-item' %>

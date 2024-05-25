@@ -31,7 +31,7 @@ ja:
       success: ログアウトしました
   bookstores:
     index:
-      title: このアプリに登録された本屋
+      title: 本屋を探す
       to_create_bookstore: 新しく本屋情報を追加する
       to_show_bookstore: 本屋詳細ページへ
     new:

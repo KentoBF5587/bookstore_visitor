@@ -3,7 +3,8 @@ class BookstoresController < ApplicationController
   before_action :set_bookstore, only: %i[edit update destroy]
 
   def index
-    @bookstores = Bookstore.includes(:user).order(created_at: :desc)
+    @q = Bookstore.ransack(params[:q])
+    @bookstores = @q.result(distinct: true).includes(:user).order(created_at: :desc)
   end
 
   def show

@@ -1,12 +1,14 @@
 <div class="container">
 <div class="col-lg-8 offset-lg-1">
 <h1><%= t('.title') %></h1>
+<% if current_user.own?(@store_review) %>
   <%= link_to edit_store_review_path(@store_review), class: "button edit-#{@store_review.id}" do %>
     <i class="bi bi-pencil"></i>
     <% end %>
     <%= link_to store_review_path(@store_review), class: "button delete-#{@store_review.id} ",  data: {  turbo_method: :delete, turbo_confirm: "削除しますか？" }  do %>
     <i class="bi bi-trash"></i>
     <% end %>
+<% end %>
 
   <div class="mb-3">
     <div>作った人の名前</div>
@@ -19,27 +21,27 @@
   </div>
 
   <div class="mb-3">
-    <div>行こうと思ったきっかけ</div>
+    <div>行こうと思ったきっかけは何ですか？</div>
     <p><%= simple_format(@store_review.opportunity) %></p>
   </div>
 
   <div class="mb-3">
-    <div>初めて行った日</div>
+    <div>初めて行ったのはいつ頃ですか？</div>
   <p><%= simple_format(@store_review.first_visit) %></p>
   </div>
 
   <div class="mb-3">
-    <div>どんなところが好きか</div>
+    <div>どんなところが好きですか？</div>
   <p><%= simple_format(@store_review.favorite_reason) %></p>
   </div>
 
   <div class="mb-3">
-    <div>この本屋さんへの愛（自由記述）</div>
+    <div>この本屋さんへの愛を自由に語ってください</div>
   <p><%= simple_format(@store_review.free_description) %></p>
   </div>
 
   <div class="mb-3">
-    <%= link_to "この本屋さんの詳細に戻る", bookstore_path(@store_review.bookstore_id) %>
+    <%= link_to "この本屋さんの詳細に戻る", bookstore_path(@store_review.bookstore_id), class: "btn btn-success" %>
   </div>
   </div>
 </div>

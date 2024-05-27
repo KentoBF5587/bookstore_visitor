@@ -15,8 +15,8 @@ ja:
         name: 本屋の名前
         address: 本屋の所在地
       store_review:
-        date_entered: おすすめ文作成日 
-        opportunity: 行こうと思ったきっかけは何ですか？
-        first_visit: 初めて行ったのはいつ頃ですか？
-        favorite_reason: どんなところが好きですか？
-        free_description: この本屋さんへの愛があれば自由にお書き下さい
+        date_entered: おすすめ文作成日（必須）
+        opportunity: 行こうと思ったきっかけは何ですか？（必須）
+        first_visit: 初めて行ったのはいつ頃ですか？（必須）
+        favorite_reason: どんなところが好きですか？（必須）
+        free_description: この本屋さんへの愛を自由に語ってください

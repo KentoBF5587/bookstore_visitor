@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
   has_many :bookstores
   has_many :store_reviews, dependent: :destroy
+
+  def own?(object)
+    object.user_id == id
+  end
 end

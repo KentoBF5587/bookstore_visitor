@@ -4,12 +4,16 @@ class BookstoresController < ApplicationController
 
   def index
     @q = Bookstore.ransack(params[:q])
-    @bookstores = @q.result(distinct: true).includes(:user).order(created_at: :desc)
+    @bookstores = if params[:tag_name]
+                    @q.result(distinct: true).includes(:user).order(created_at: :desc).tag_join(params[:tag_name])
+                  else
+                    @q.result(distinct: true).includes(:user).order(created_at: :desc)
+                  end
   end
 
   def show
     @bookstore = Bookstore.find(params[:id])
-    @store_reviews = @bookstore.store_reviews
+    @store_reviews = @bookstore.store_reviews.order(created_at: :desc)
   end
 
   def new

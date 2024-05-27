@@ -9,9 +9,9 @@
       <%= f.text_field :address, class: "form-control" %>
     </div>
     <div class="mb-3">
-      <p>どんなものが当てはまりますか？(複数タグを選びたい場合はshiftキーを押しながら選択してください)</p>
-      <%= f.collection_select :tag_ids, Tag.all, :id, :name, {}, { multiple: true, size: 10, name: "bookstore[tag_ids][]" } %>
+      <p>この本屋さんに当てはまるものを選んでください（複数選択可）</p>
+      <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name, {}, { multiple: true, name: "bookstore[tag_ids][]" } %>
     </div>
 
-    <%= f.submit nil, class: "btn btn-primary" %>
+    <%= f.submit nil, class: "btn btn-success" %>
     <% end %>

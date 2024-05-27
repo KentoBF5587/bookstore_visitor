@@ -14,4 +14,6 @@ class Bookstore < ApplicationRecord
   def self.ransackable_associations(_auth_object = nil)
     []
   end
+
+  scope :tag_join, ->(tag_name) { joins(:tags).where(tags: { name: tag_name }) }
 end

@@ -1,7 +1,7 @@
 <div class="container">
 <div class="col-lg-8 offset-lg-1">
 <h1><%= t('.title') %></h1>
-<% if current_user.own?(@store_review) %>
+<% if current_user && current_user.own?(@store_review) %>
   <%= link_to edit_store_review_path(@store_review), class: "button edit-#{@store_review.id}" do %>
     <i class="bi bi-pencil"></i>
     <% end %>

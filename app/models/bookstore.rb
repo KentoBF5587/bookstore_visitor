@@ -1,4 +1,6 @@
 class Bookstore < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
   validates :name, presence: true, length: { maximum: 255 }
   validates :address, presence: true, length: { maximum: 255 }
 

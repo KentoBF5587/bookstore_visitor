@@ -14,6 +14,8 @@ class BookstoresController < ApplicationController
   def show
     @bookstore = Bookstore.find(params[:id])
     @store_reviews = @bookstore.store_reviews.order(created_at: :desc)
+    gon.bookstore_lat = @bookstore.latitude
+    gon.bookstore_lng = @bookstore.longitude
   end
 
   def new

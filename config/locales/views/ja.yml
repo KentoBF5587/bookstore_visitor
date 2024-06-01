@@ -49,8 +49,6 @@ ja:
     destroy:
       success: 本屋の情報を削除しました
   store_reviews:
-    new:
-      title: 本屋レビュー新規作成
     create:
       success: 新しく本屋のレビューを投稿しました
     update:

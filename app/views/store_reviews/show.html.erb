@@ -1,6 +1,6 @@
 <div class="container">
 <div class="col-lg-8 offset-lg-1">
-<h1><%= t('.title') %></h1>
+<h2><%= @store_review.bookstore.name %>さんへ</h2>
 <% if current_user && current_user.own?(@store_review) %>
   <%= link_to edit_store_review_path(@store_review), class: "button edit-#{@store_review.id}" do %>
     <i class="bi bi-pencil"></i>
@@ -11,36 +11,36 @@
 <% end %>
 
   <div class="mb-3">
-    <div>作った人の名前</div>
+    <div class="fw-semibold">作った人の名前</div>
     <p><%= @store_review.user.name %></p>
   </div>
 
   <div class="mb-3">
-    <div>おすすめ文作成日</div>
+    <div class="fw-semibold">おすすめ文作成日</div>
     <p><%= @store_review.date_entered %></p>
   </div>
 
   <div class="mb-3">
-    <div>行こうと思ったきっかけは何ですか？</div>
+    <div class="fw-semibold">行こうと思ったきっかけは何ですか？</div>
     <p><%= simple_format(@store_review.opportunity) %></p>
   </div>
 
   <div class="mb-3">
-    <div>初めて行ったのはいつ頃ですか？</div>
+    <div class="fw-semibold">初めて行ったのはいつ頃ですか？</div>
   <p><%= simple_format(@store_review.first_visit) %></p>
   </div>
 
   <div class="mb-3">
-    <div>どんなところが好きですか？</div>
+    <div class="fw-semibold">どんなところが好きですか？</div>
   <p><%= simple_format(@store_review.favorite_reason) %></p>
   </div>
 
   <div class="mb-3">
-    <div>この本屋さんへの愛を自由に語ってください</div>
+    <div class="fw-semibold">この本屋さんへの愛を自由に語ってください</div>
   <p><%= simple_format(@store_review.free_description) %></p>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3" data-turbo="false">
     <%= link_to "この本屋さんの詳細に戻る", bookstore_path(@store_review.bookstore_id), class: "btn btn-success" %>
   </div>
   </div>

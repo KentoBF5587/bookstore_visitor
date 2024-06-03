@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :store_reviews, only: %i[show new  edit create update destroy], shallow: true
   end
 
+  resource :profiles, only: %i[show edit update]
+
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'

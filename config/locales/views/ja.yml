@@ -55,6 +55,10 @@ ja:
       success: 本屋のレビューを更新しました
     destroy:
       success: 本屋のレビューを削除しました
+  profiles:
+    update:
+      success: ユーザー情報を更新しました
+      failure: ユーザー情報を更新できませんでした
   header:
     login: ログイン
     logout: ログアウト

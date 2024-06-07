@@ -2,4 +2,5 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "./map"
+import "./autocomplete"
 import * as bootstrap from "bootstrap"

@@ -1,7 +1,7 @@
 let map;
 
 async function initMap() {
-  // The location of Uluru
+
   const position = { lat: gon.bookstore_lat, lng: gon.bookstore_lng };
   // Request needed libraries.
   //@ts-ignore

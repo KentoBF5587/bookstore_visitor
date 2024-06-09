@@ -1,0 +1,31 @@
+<div class="container">
+
+<h2>行きたい本屋リスト</h2>
+
+<ul class="nav nav-tabs">
+  <li class="nav-items">
+    <div class="nav-link">
+      <%= link_to "プロフィール", profiles_path %>
+    </div>
+  </li>
+  <li class="nav-items">
+    <div class="nav-link active">
+      行きたい本屋リスト
+    </div>
+  </li>
+  <li class="nav-items">
+    <div class="nav-link">
+      ううう
+    </div>
+  </li>
+</ul>
+<div class="col-lg-8 offset-lg-1">
+  <div class="row">
+  <% if @wanna_bookstores.present? %>
+    <%= render @wanna_bookstores %>
+  <% else %>
+    <p>行きたい本屋はありません</p>
+  <% end %>
+  </div>
+  </div>
+</div>

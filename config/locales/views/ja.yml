@@ -59,6 +59,11 @@ ja:
     update:
       success: ユーザー情報を更新しました
       failure: ユーザー情報を更新できませんでした
+  wanna_go_bookstores:
+    create:
+      wanna_go: 行きたい本屋に登録しました
+    destroy:
+      already_go: 行きたい本屋から外しました
   header:
     login: ログイン
     logout: ログアウト

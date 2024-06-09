@@ -4,9 +4,15 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :bookstores, only: %i[index show new edit create update destroy] do
     resources :store_reviews, only: %i[show new  edit create update destroy], shallow: true
+    collection do
+      get :wanna_go_bookstores
+    end
   end
 
-  resource :profiles, only: %i[show edit update]
+  resource :profiles, only: %i[show edit update] do
+    get "bookstore_list", to: "profiles#bookstore_list"
+  end
+  resources :wanna_go_bookstores, only: %i[create destroy]
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

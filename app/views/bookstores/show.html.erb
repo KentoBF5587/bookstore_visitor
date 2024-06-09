@@ -2,9 +2,7 @@
   <h1><%= t('.title') %></h1>
   <div class="d-flex">
   <h3><%= @bookstore.name %></h3>
-    <%= link_to '#' do %>  
-      <i class="bi bi-bookmark"></i>
-    <% end %>
+    <%= render "bookstores/wanna_go_button", bookstore: @bookstore  %>
     <%= link_to edit_bookstore_path(@bookstore), class: "button-edit-#{@bookstore.id}" do %>
       <i class="bi bi-pencil"></i>
     <% end %>
@@ -35,7 +33,6 @@
     // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
   });
   </script>
-
 
   <div class="row">
     <h3>この本屋のおすすめ文</h3>

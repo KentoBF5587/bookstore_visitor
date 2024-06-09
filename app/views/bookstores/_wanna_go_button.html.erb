@@ -1,0 +1,5 @@
+<% if current_user.wanna_go?(@bookstore) %>
+  <%= render "bookstores/already_go", { bookstore: @bookstore } %>
+<% else %>
+  <%= render "bookstores/wanna_go", { bookstore: @bookstore } %>
+<% end %>

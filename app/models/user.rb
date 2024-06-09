@@ -10,8 +10,22 @@ class User < ApplicationRecord
 
   has_many :bookstores
   has_many :store_reviews, dependent: :destroy
+  has_many :wanna_go_bookstores, dependent: :destroy
+  has_many :wanna_bookstores, through: :wanna_go_bookstores, source: :bookstore
 
   def own?(object)
     object.user_id == id
+  end
+
+  def wanna_go(bookstore)
+    wanna_bookstores << bookstore
+  end
+
+  def already_go(bookstore)
+    wanna_bookstores.delete(bookstore)
+  end
+
+  def wanna_go?(bookstore)
+    wanna_bookstores.include?(bookstore)
   end
 end

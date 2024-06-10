@@ -1,4 +1,3 @@
-function initialize() {
 document.addEventListener('DOMContentLoaded', function() {
 
     let inputName = document.getElementById('Name');
@@ -24,6 +23,3 @@ document.addEventListener('DOMContentLoaded', function() {
         inputAddress.value = place.formatted_address;
     });
 });
-}
-
-initialize();

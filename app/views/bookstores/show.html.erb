@@ -3,9 +3,11 @@
   <div class="d-flex">
   <h3><%= @bookstore.name %></h3>
     <%= render "bookstores/wanna_go_button", bookstore: @bookstore  %>
+    <div data-turbo="false">
     <%= link_to edit_bookstore_path(@bookstore), class: "button-edit-#{@bookstore.id}" do %>
       <i class="bi bi-pencil"></i>
     <% end %>
+    </div>
     <% if current_user && current_user.own?(@bookstore) %>
     <%= link_to bookstore_path(@bookstore), class: "button-delete-#{@bookstore.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.flash_message.delete') } do %>
       <i class="bi bi-trash"></i>

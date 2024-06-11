@@ -1,5 +1,4 @@
 class WannaGoBookstoresController < ApplicationController
-
   def create
     @bookstore = Bookstore.find(params[:bookstore_id])
     current_user.wanna_go(@bookstore)

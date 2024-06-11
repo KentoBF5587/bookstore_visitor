@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
   end
 
   def bookstore_list
-    @wanna_bookstores = current_user.wanna_bookstores.includes(:user).order(created_at: :desc)    
+    @wanna_bookstores = current_user.wanna_bookstores.includes(:user).order(created_at: :desc)
   end
 
   private

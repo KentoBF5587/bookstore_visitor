@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   end
   resources :wanna_go_bookstores, only: %i[create destroy]
 
+  get 'how_to_use', to: 'pages#how_to_use'
+
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'

@@ -1,11 +1,11 @@
 <div class="container">
 
-<h2>行きたい本屋リスト</h2>
+<h2>おすすめした本屋リスト</h2>
 
 <ul class="nav nav-tabs">
   <li class="nav-items">
     <div class="nav-link">
-      <%= link_to "プロフィール", profiles_path %>
+      <%= link_to "プロフィール", profiles_path, class:"link-secondary text-decoration-none" %>
     </div>
   </li>
   <li class="nav-items">
@@ -15,7 +15,7 @@
   </li>
   <li class="nav-items">
     <div class="nav-link">
-      ううう
+    <%= link_to "おすすめした本屋リスト", "/profiles/review_list", class:"link-secondary text-decoration-none" %>
     </div>
   </li>
 </ul>
@@ -27,5 +27,6 @@
     <p>行きたい本屋はありません</p>
   <% end %>
   </div>
+  <%= paginate @wanna_bookstores, theme: 'bootstrap-5' %>
   </div>
 </div>

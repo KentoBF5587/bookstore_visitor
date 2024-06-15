@@ -1,0 +1,32 @@
+<div class="container">
+
+<h2>おすすめした本屋リスト</h2>
+
+<ul class="nav nav-tabs">
+  <li class="nav-items">
+    <div class="nav-link">
+      <%= link_to "プロフィール", profiles_path, class:"link-secondary text-decoration-none" %>
+    </div>
+  </li>
+  <li class="nav-items">
+    <div class="nav-link">
+      <%= link_to "行きたい本屋リスト", "/profiles/bookstore_list", class:"link-secondary text-decoration-none" %>
+    </div>
+  </li>
+  <li class="nav-items">
+    <div class="nav-link active">
+   おすすめした本屋リスト
+    </div>
+  </li>
+</ul>
+<div class="col-lg-8 offset-lg-1">
+  <div class="row">
+<% if @store_reviews.present? %>
+  <%= render @store_reviews %>
+<% else %>
+  <p>おすすめした本屋はありません</p>
+<% end %>
+  </div>
+  <%= paginate @store_reviews, theme: 'bootstrap-5' %>
+</div>
+</div>

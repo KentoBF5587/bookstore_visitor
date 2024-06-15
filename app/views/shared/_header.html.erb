@@ -15,7 +15,7 @@
       <%= link_to t('header.find_bookstore'), bookstores_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-    <%= link_to t('header.diagnostic'), "#", class: 'nav-link' %>
+    <%= link_to t('header.diagnostic'), "#", class: 'nav-link text-decoration-line-through' %>
     </li>
     <li class="nav-item">
     <%= link_to t('header.how_to_use'), "/how_to_use", class: 'nav-link', target: :_blank, rel: "noopener noreferrer" %>
@@ -26,7 +26,7 @@
      <div class="dropdown-menu dropdown-menu-end">
        <%= link_to t('header.profile'), profiles_path, class: 'dropdown-item' %>
        <%= link_to t('header.wanna_go_bookstore'), "/profiles/bookstore_list", class: 'dropdown-item' %>
-       <%= link_to t('header.favorite_bookstore'), "#", class: 'dropdown-item' %>
+       <%= link_to t('header.favorite_bookstore'), "/profiles/review_list", class: 'dropdown-item' %>
      <div class="dropdown-divider"></div>
        <%= link_to t('header.logout'), logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
      </div>

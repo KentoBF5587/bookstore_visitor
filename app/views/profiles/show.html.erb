@@ -1,6 +1,6 @@
 <div class="container">
 
-<h2>あなたのページ</h2>
+<h2>プロフィール</h2>
 
 <ul class="nav nav-tabs">
   <li class="nav-items">
@@ -10,12 +10,12 @@
   </li>
   <li class="nav-items">
     <div class="nav-link">
-      <%= link_to "行きたい本屋リスト", "/profiles/bookstore_list" %>
+      <%= link_to "行きたい本屋リスト", "/profiles/bookstore_list", class:"link-secondary text-decoration-none" %>
     </div>
   </li>
   <li class="nav-items">
     <div class="nav-link">
-      ううう
+    <%= link_to "おすすめした本屋リスト", "/profiles/review_list", class:"link-secondary text-decoration-none" %>
     </div>
   </li>
 </ul>

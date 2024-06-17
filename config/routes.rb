@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :wanna_go_bookstores, only: %i[create destroy]
 
   get 'how_to_use', to: 'pages#how_to_use'
+  get 'inquiry', to: 'pages#inquiry'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

@@ -56,6 +56,10 @@ ja:
     destroy:
       success: 本屋のレビューを削除しました
   profiles:
+    show:
+      profile: プロフィール
+      wanna_go_bookstore: 行きたい本屋リスト
+      store_review: おすすめ文リスト
     update:
       success: ユーザー情報を更新しました
       failure: ユーザー情報を更新できませんでした
@@ -71,8 +75,8 @@ ja:
     diagnostic: 診断機能
     how_to_use: このアプリの使い方
     profile: プロフィール
-    wanna_go_bookstore: 行きたい本屋
-    favorite_bookstore: おすすめした本屋
+    wanna_go_bookstore: 行きたい本屋リスト
+    review_list: おすすめ文リスト
   footer:
     terms_of_service: 利用規約
     inquiry: お問い合わせ

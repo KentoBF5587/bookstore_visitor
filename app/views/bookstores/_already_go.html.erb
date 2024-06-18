@@ -1,3 +1,5 @@
-<%= link_to wanna_go_bookstore_path(current_user.wanna_go_bookstores.find_by(bookstore_id: bookstore.id)), id: "already_go-button-for-bookstore-#{bookstore.id}", data: { turbo_method: :delete } do %>
+<div data-turbo="false">
+<%= button_to wanna_go_bookstore_path(current_user.wanna_go_bookstores.find_by(bookstore_id: bookstore.id)), method: :delete, id: "already_go-button-for-bookstore-#{bookstore.id}", class: "btn btn-link p-0 border-0" do %>
   <i class="bi bi-bookmark-fill"></i>
 <% end %>
+</div>

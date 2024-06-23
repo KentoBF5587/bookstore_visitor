@@ -1,0 +1,9 @@
+<div class="container">
+  <h1><%= t('.title') %></h1>
+  <div>
+    <%= link_to 'Login with Google', auth_at_provider_path(provider: :google) %>
+  </div>
+  <div>
+    <%= link_to t('.mail_login'), login_path %>
+  </div>
+</div>

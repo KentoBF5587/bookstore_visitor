@@ -20,7 +20,7 @@ ja:
       failure: ユーザー登録に失敗しました
   user_sessions:
     new:
-      title: ログイン
+      title: メールアドレスでログイン
       login: ログイン
       to_register_page: 新規登録ページへ
       password_forget: パスワードをお忘れの方はこちら
@@ -68,6 +68,10 @@ ja:
       wanna_go: 行きたい本屋に登録しました
     destroy:
       already_go: 行きたい本屋から外しました
+  pages:
+    select_login:
+      title: ログイン方法を選んでください
+      mail_login: メールアドレスでログイン
   header:
     login: ログイン
     logout: ログアウト

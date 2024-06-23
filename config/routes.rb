@@ -17,10 +17,15 @@ Rails.application.routes.draw do
 
   get 'how_to_use', to: 'pages#how_to_use'
   get 'inquiry', to: 'pages#inquiry'
+  get 'select_login', to: 'pages#select_login'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
+
+  post 'oauth/callback', to: 'oauths#callback'
+  get 'oauth/callback', to: 'oauths#callback'
+  get 'oauth/provider', to: 'oauths#oauth', as: :auth_at_provider
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

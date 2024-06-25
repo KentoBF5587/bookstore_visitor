@@ -49,17 +49,23 @@ ja:
     destroy:
       success: 本屋の情報を削除しました
   store_reviews:
+    new:
+      title: おすすめ文新規作成
+    edit:
+      title: おすすめ文の編集
     create:
-      success: 新しく本屋のレビューを投稿しました
+      success: 新しく本屋のおすすめ文を投稿しました
     update:
-      success: 本屋のレビューを更新しました
+      success: 本屋のおすすめ文を更新しました
     destroy:
-      success: 本屋のレビューを削除しました
+      success: 本屋のおすすめ文を削除しました
   profiles:
     show:
       profile: プロフィール
       wanna_go_bookstore: 行きたい本屋リスト
       store_review: おすすめ文リスト
+    edit:
+      title: ユーザー編集
     update:
       success: ユーザー情報を更新しました
       failure: ユーザー情報を更新できませんでした
@@ -69,9 +75,17 @@ ja:
     destroy:
       already_go: 行きたい本屋から外しました
   pages:
+    how_to_use:
+      title: このアプリの使い方
+    inquiry:
+      title: お問い合わせ
     select_login:
-      title: ログイン方法を選んでください
+      title: ログイン方法の選択
       mail_login: メールアドレスでログイン
+  oauths:
+    callback:
+      success: Googleアカウントでログインしました
+      failure: Googleアカウントでのログインに失敗しました
   header:
     login: ログイン
     logout: ログアウト

@@ -8,13 +8,13 @@ class OauthsController < ApplicationController
   def callback
     provider = auth_params[:provider]
     if (@user = login_from(provider))
-      redirect_to root_path, success: "Googleアカウントでログインしました"
+      redirect_to root_path, success: t('.success')
     else
       begin
         signup_and_login(provider)
-        redirect_to root_path, success: "Googleアカウントでログインしました"
+        redirect_to root_path, success: t('.success')
       rescue
-        flash[:danger] = "Googleアカウントでのログインに失敗しました"
+        flash[:danger] = t('.failure')
         redirect_to root_path
       end
     end

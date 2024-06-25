@@ -1,9 +1,14 @@
+<%= content_for(:title, t('.title')) %>
 <div class="container">
   <h1><%= t('.title') %></h1>
-  <div>
-    <%= link_to 'Login with Google', auth_at_provider_path(provider: :google) %>
+  <p>※Googleアカウントを使ってアカウント登録・ログインする場合は上を選んでください</p>
+  <div class="mb-3">
+  <%= link_to auth_at_provider_path(provider: :google) do %>
+    <%= image_tag "web_neutral_rd_ctn@1x.png" %>
+    <% end %>
   </div>
-  <div>
-    <%= link_to t('.mail_login'), login_path %>
+  
+  <div class="mb-3">
+    <%= link_to t('.mail_login'), login_path, class: "btn btn-success" %>
   </div>
 </div>

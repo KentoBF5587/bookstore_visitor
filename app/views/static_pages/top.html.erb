@@ -10,5 +10,7 @@
 <p>あなたの"推し本屋"を語る、見つける</p>
 <h3>このアプリを共有する</h3>
 <p>本屋好きに届いてもらえたら嬉しいです</p>
-<%= link_to "Xで共有する", "https://twitter.com/share?url=#{URI.encode_www_form_component(root_url)}&text=#{URI.encode_www_form_component("好きな本屋ありますか？「ほんやがたり」で見つかるかもしれません。")}&hashtags=#{URI.encode_www_form_component("ほんやがたり,バトラン")}", target: '_blank' %>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= root_url %>" data-text="好きな本屋ありますか？「ほんやがたり」で見つかるかもしれません。" data-hashtags="ほんやがたり,バトラン" data-show-count="false">Xで共有する</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 </div>

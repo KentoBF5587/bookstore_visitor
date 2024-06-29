@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'how_to_use', to: 'pages#how_to_use'
   get 'inquiry', to: 'pages#inquiry'
   get 'select_login', to: 'pages#select_login'
+  get 'terms_of_service', to: 'pages#terms_of_service'
+  get 'privacy_policy', to: 'pages#privacy_policy'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

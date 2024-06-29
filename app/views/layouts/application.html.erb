@@ -8,8 +8,18 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= include_gon %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
-  </head>
 
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QY66WYPSZ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QY66WYPSZ5');
+</script>
+  </head>
+  
   <body>
     <% if logged_in? %>
       <%= render "shared/header" %>

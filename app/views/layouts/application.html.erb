@@ -26,6 +26,9 @@
     <% else %>
       <%= render "shared/before_login_header" %>
     <% end %>
+    <ol class="breadcrumb" data-turbo="false">
+    <%= render_breadcrumbs :tag => :li, :separator => "＞" %>
+    </ol>
     <%= render "shared/flash_message" %>
     <%= yield %>
     <%= render "shared/footer" %>

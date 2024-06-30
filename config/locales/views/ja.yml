@@ -52,9 +52,11 @@ ja:
     new:
       title: おすすめ文新規作成
     edit:
-      title: おすすめ文の編集
+      title: おすすめ文編集
     create:
       success: 新しく本屋のおすすめ文を投稿しました
+    show:
+      title: おすすめ文
     update:
       success: 本屋のおすすめ文を更新しました
     destroy:
@@ -82,6 +84,10 @@ ja:
     select_login:
       title: ログイン方法の選択
       mail_login: メールアドレスでログイン
+    terms_of_service:
+      title: 利用規約
+    privacy_policy:
+      title: プライバシーポリシー
   oauths:
     callback:
       success: Googleアカウントでログインしました

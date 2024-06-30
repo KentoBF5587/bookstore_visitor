@@ -2,16 +2,27 @@ class StoreReviewsController < ApplicationController
   skip_before_action :require_login, only: %i[show]
   before_action :set_store_review, only: %i[edit update destroy]
 
+  add_breadcrumb "HOME", :root_path
+  add_breadcrumb "推し本屋を探す", :bookstores_path
+
   def show
     @store_review = StoreReview.find(params[:id])
+    add_breadcrumb @store_review.bookstore.name, bookstore_path(@store_review.bookstore)
+    add_breadcrumb t('.title')
   end
 
   def new
     @bookstore = Bookstore.find(params[:bookstore_id])
+    add_breadcrumb @bookstore.name, bookstore_path(@bookstore)
+    add_breadcrumb t('.title')
     @store_review = StoreReview.new
   end
 
-  def edit; end
+  def edit
+    add_breadcrumb @bookstore.name, bookstore_path(@bookstore)
+    add_breadcrumb t('.show.title')
+    add_breadcrumb t('.title')
+  end
 
   def create
     @bookstore = Bookstore.find(params[:bookstore_id])

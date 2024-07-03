@@ -1,0 +1,15 @@
+<%= form_with model: @purchase_history, url: profiles_purchase_histories_path do |f| %>
+  <%= f.label :purchase_date %>
+  <%= f.text_area :purchase_date, class: "form-control" %>
+
+  <%= f.label :title %>
+  <%= f.text_area :title, class: "form-control" %>
+
+  <%= f.label :author_name %>
+  <%= f.text_area :author_name, class: "form-control" %>
+
+  <%= f.label :note %>
+  <%= f.text_area :note, class: "form-control" %>
+
+  <%= f.submit nil, class: "btn btn-success" %>
+<% end %>

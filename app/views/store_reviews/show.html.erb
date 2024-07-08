@@ -6,10 +6,10 @@
   <%= link_to edit_store_review_path(@store_review), class: "button edit-#{@store_review.id}" do %>
     <i class="bi bi-pencil"></i>
     <% end %>
-    <%= link_to store_review_path(@store_review), class: "button delete-#{@store_review.id} ",  data: {  turbo_method: :delete, turbo_confirm: "削除しますか？" }  do %>
+    <%= link_to store_review_path(@store_review), class: "button delete-#{@store_review.id} ",  data: { turbo_method: :delete, turbo_confirm: "削除しますか？"} do %>
     <i class="bi bi-trash"></i>
     <% end %>
-<% end %>
+  <% end %>
 
   <div class="mb-3">
     <div class="fw-semibold">作った人の名前</div>

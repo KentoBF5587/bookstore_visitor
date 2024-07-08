@@ -57,6 +57,6 @@ class StoreReviewsController < ApplicationController
   end
 
   def store_review_params
-    params.require(:store_review).permit(:date_entered, :opportunity, :first_visit, :favorite_reason, :free_description)
+    params.require(:store_review).permit(:date_entered, :opportunity, :first_visit, :favorite_reason, :free_description, :bookstore_id)
   end
 end

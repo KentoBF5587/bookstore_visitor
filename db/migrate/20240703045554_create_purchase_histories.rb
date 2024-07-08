@@ -7,7 +7,6 @@ class CreatePurchaseHistories < ActiveRecord::Migration[7.1]
       t.string :note
 
       t.references :user, null: false, foreign_key: true
-      t.references :bookstore, null: false, foreign_key: true
       t.references :store_review, null: false, foreign_key: true
 
       t.timestamps

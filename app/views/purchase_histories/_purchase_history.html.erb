@@ -1,0 +1,19 @@
+<p>↓</p>
+
+<div id="purchase_history-id-<%= purchase_history.id %>" class="border">
+  <div class="text-end">
+  <%= link_to profiles_purchase_history_path(purchase_history), data: { turbo_method: :delete, turbo_confirm: :"削除しますか？" }, id: "button-delete-#{purchase_history}" do %>
+    <i class="bi bi-trash"></i>
+  <% end %>
+  </div>
+  <%= purchase_history.purchase_date %>
+  
+<p><%= purchase_history.store_review.bookstore.name %></p>
+<div>
+<p><%= purchase_history.title %></p>
+<p><%= purchase_history.author_name %></p>
+</div>
+<div>
+<%= simple_format(purchase_history.note) %>
+</div>
+</div>

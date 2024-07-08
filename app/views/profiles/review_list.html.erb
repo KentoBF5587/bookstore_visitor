@@ -20,14 +20,29 @@
     </div>
   </li>
 </ul>
-<div class="col-lg-8 offset-lg-1">
-  <div class="row">
+<div class="row">
+<div class="col">
+<div class="row">
+  <h3>あなたの書いたおすすめ文一覧</h3>
 <% if @store_reviews.present? %>
   <%= render @store_reviews %>
 <% else %>
   <p>あなたが書いたおすすめ文はありません</p>
 <% end %>
-  </div>
+</div>
   <%= paginate @store_reviews, theme: 'bootstrap-5' %>
+</div>
+<div class="col">
+<h3>推し活リスト</h3>
+<%= render "purchase_histories/form"%>
+<p>結果はここに表示、ページネーションも出来ればつける</p>
+
+<% if @purchase_histories.present? %>
+<%= render @purchase_histories %>
+<% else %>
+<p>推し活リストがまだ作られていません</p>
+<p>おすすめ文を書いたら、買った本を記録してみましょう！</p>
+<% end %>
+
 </div>
 </div>

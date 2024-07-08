@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resource :profiles, only: %i[show edit update] do
     get "bookstore_list", to: "profiles#bookstore_list"
     get "review_list", to: "profiles#review_list"
+    resources :purchase_histories, only: %i[create edit update destroy]
   end
   resources :wanna_go_bookstores, only: %i[create destroy]
 

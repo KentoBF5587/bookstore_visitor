@@ -16,11 +16,11 @@
   </li>
   <li class="nav-items">
     <div class="nav-link">
-    <%= link_to t('profiles.show.store_review'), "/profiles/review_list", class:"link-secondary text-decoration-none" %>
+    <%= link_to t('profiles.show.store_review'), review_list_profiles_path, class:"link-secondary text-decoration-none" %>
     </div>
   </li>
 </ul>
-<div class="col-lg-8 offset-lg-1">
+<div class="col-lg-8">
   <div class="row">
   <% if @wanna_bookstores.present? %>
     <%= render @wanna_bookstores %>

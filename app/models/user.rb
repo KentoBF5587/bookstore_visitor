@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :store_reviews, dependent: :destroy
   has_many :wanna_go_bookstores, dependent: :destroy
   has_many :wanna_bookstores, through: :wanna_go_bookstores, source: :bookstore
+  has_many :purchase_histories, dependent: :destroy
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
 

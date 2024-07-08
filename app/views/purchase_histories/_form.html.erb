@@ -1,0 +1,20 @@
+<%= form_with model: @purchase_history, url: profiles_purchase_histories_path do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :purchase_date %>
+  <%= f.text_field :purchase_date %>
+
+  本屋の名前
+  <%= f.collection_select :store_review_id, current_user.store_reviews.includes(:bookstore).map(&:bookstore), :id, :name, prompt: "購入した推し本屋を選択してください" %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control", placeholder: "入力してください" %>
+
+  <%= f.label :author_name %>
+  <%= f.text_field :author_name, class: "form-control", placeholder: "入力してください" %>
+
+  <%= f.label :note %>
+  <%= f.text_area :note, class: "form-control" %>
+
+  <%= f.submit nil, class: "btn btn-success" %>
+<% end %>

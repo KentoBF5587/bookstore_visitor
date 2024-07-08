@@ -20,3 +20,8 @@ ja:
         first_visit: 初めて行ったのはいつ頃ですか？（必須）
         favorite_reason: どんなところが好きですか？（必須）
         free_description: この本屋さんへの愛を自由に語ってください
+      purchase_history:
+        purchase_date: 買った日
+        title: 本のタイトル
+        author_name: 著者
+        note: メモ

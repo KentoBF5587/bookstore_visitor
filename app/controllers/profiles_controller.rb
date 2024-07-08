@@ -26,6 +26,8 @@ class ProfilesController < ApplicationController
   def review_list
     add_breadcrumb t('profiles.show.store_review')
     @store_reviews = current_user.store_reviews.includes(:user).order(created_at: :desc).page(params[:page])
+    @purchase_history = PurchaseHistory.new
+    @purchase_histories = current_user.purchase_histories.includes(:user).order(created_at: :desc)
   end
 
   private

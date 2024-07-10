@@ -5,7 +5,7 @@
   <%= f.text_field :purchase_date %>
 
   本屋の名前
-  <%= f.collection_select :store_review_id, current_user.store_reviews.includes(:bookstore).map(&:bookstore), :id, :name, prompt: "購入した推し本屋を選択してください" %>
+  <%= f.collection_select :store_review_id, current_user.store_reviews, :id, :bookstore_name, prompt: "購入した推し本屋を選択してください" %>
 
   <%= f.label :title %>
   <%= f.text_field :title, class: "form-control", placeholder: "入力してください" %>

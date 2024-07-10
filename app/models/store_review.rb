@@ -8,4 +8,8 @@ class StoreReview < ApplicationRecord
   has_many :purchase_histories, dependent: :destroy
   belongs_to :bookstore
   belongs_to :user
+
+  def bookstore_name
+    bookstore_name = bookstore.name
+  end
 end

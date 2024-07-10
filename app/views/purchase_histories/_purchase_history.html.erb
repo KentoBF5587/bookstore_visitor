@@ -1,6 +1,4 @@
-<p>↓</p>
-
-<div id="purchase_history-id-<%= purchase_history.id %>" class="border">
+<div id="purchase_history-id-<%= purchase_history.id %>" class="border mb-3">
   <div class="text-end">
   <%= link_to profiles_purchase_history_path(purchase_history), data: { turbo_method: :delete, turbo_confirm: :"削除しますか？" }, id: "button-delete-#{purchase_history}" do %>
     <i class="bi bi-trash"></i>

@@ -2,13 +2,14 @@ class BookstoresController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
   before_action :set_bookstore, only: %i[edit update destroy]
 
-  add_breadcrumb "HOME", :root_path
+  add_breadcrumb 'HOME', :root_path
 
   def index
     add_breadcrumb t('.title'), :bookstores_path
     @q = Bookstore.ransack(params[:q])
     @bookstores = if params[:tag_name]
-                    @q.result(distinct: true).includes(:user).order(created_at: :desc).tag_join(params[:tag_name]).page(params[:page])
+                    @q.result(distinct: true).includes(:user).order(created_at: :desc).tag_join(params[:tag_name])
+                      .page(params[:page])
                   else
                     @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
                   end

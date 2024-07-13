@@ -64,8 +64,8 @@ ja:
   profiles:
     show:
       profile: プロフィール
-      wanna_go_bookstore: 行きたい本屋リスト
-      store_review: おすすめ文リスト
+      bookstore_list: 行きたい本屋リスト
+      review_list: おすすめ文リスト
     edit:
       title: ユーザー編集
     update:
@@ -76,6 +76,17 @@ ja:
       wanna_go: 行きたい本屋に登録しました
     destroy:
       already_go: 行きたい本屋から外しました
+  purchase_histories:
+    create:
+      success: 推し活リストが作成できました
+      failure: 推し活リスト作成に失敗しました
+    edit:
+      title: 推し活リスト編集
+    update:
+      success: 推し活リストが更新できました
+      failure: 推し活リストが更新できませんでした
+    destroy:
+      success: 推し活リストを削除しました
   pages:
     how_to_use:
       title: このアプリの使い方

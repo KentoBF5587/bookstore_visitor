@@ -2,8 +2,8 @@ class StoreReviewsController < ApplicationController
   skip_before_action :require_login, only: %i[show]
   before_action :set_store_review, only: %i[edit update destroy]
 
-  add_breadcrumb "HOME", :root_path
-  add_breadcrumb "推し本屋を探す", :bookstores_path
+  add_breadcrumb 'HOME', :root_path
+  add_breadcrumb '推し本屋を探す', :bookstores_path
 
   def show
     @store_review = StoreReview.find(params[:id])
@@ -57,6 +57,7 @@ class StoreReviewsController < ApplicationController
   end
 
   def store_review_params
-    params.require(:store_review).permit(:date_entered, :opportunity, :first_visit, :favorite_reason, :free_description, :bookstore_id)
+    params.require(:store_review).permit(:date_entered, :opportunity, :first_visit, :favorite_reason,
+                                         :free_description, :bookstore_id)
   end
 end

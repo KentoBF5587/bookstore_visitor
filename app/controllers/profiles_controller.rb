@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[show edit update]
 
-  add_breadcrumb "HOME", :root_path
+  add_breadcrumb 'HOME', :root_path
 
   def show
     add_breadcrumb t('.profile')
@@ -19,15 +19,16 @@ class ProfilesController < ApplicationController
   end
 
   def bookstore_list
-    add_breadcrumb t('profiles.show.wanna_go_bookstore')
+    add_breadcrumb t('profiles.show.bookstore_list')
     @wanna_bookstores = current_user.wanna_bookstores.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def review_list
-    add_breadcrumb t('profiles.show.store_review')
+    add_breadcrumb t('profiles.show.review_list')
     @store_reviews = current_user.store_reviews.includes(:user).order(created_at: :desc).page(params[:page]).per(9)
     @purchase_history = PurchaseHistory.new
-    @purchase_histories = current_user.purchase_histories.includes(:user).order(created_at: :desc).page(params[:page]).per(9)
+    @purchase_histories = current_user.purchase_histories.includes(:user).order(created_at: :desc)
+                                      .page(params[:page]).per(9)
   end
 
   private

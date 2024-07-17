@@ -1,5 +1,6 @@
 ja:
   defaults:
+    password_reset: パスワードリセット
     flash_message:
       require_login: ログインしてください
       delete: 削除しますがよろしいですか？
@@ -103,6 +104,17 @@ ja:
     callback:
       success: Googleアカウントでログインしました
       failure: Googleアカウントでのログインに失敗しました
+  password_resets:
+    new:
+      title: パスワードリセット申請
+      submit: 送信
+    edit:
+      title: パスワードリセット
+    create:
+      success: パスワードリセット手順を送信しました
+    update:
+      success: パスワードを更新しました
+      failure: パスワードを更新できませんでした
   header:
     login: ログイン
     logout: ログアウト

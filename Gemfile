@@ -63,6 +63,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
+  gem "letter_opener_web", "~>2.0.0"
 end
 
 group :development do

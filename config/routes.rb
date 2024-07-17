@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     resources :purchase_histories, only: %i[create edit update destroy]
   end
   resources :wanna_go_bookstores, only: %i[create destroy]
+  resources :password_resets, only: %i[new edit create update]
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   get 'how_to_use', to: 'pages#how_to_use'
   get 'inquiry', to: 'pages#inquiry'

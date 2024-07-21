@@ -23,10 +23,10 @@ class PasswordResetsController < ApplicationController
 
     @user.password_confirmation = params[:user][:password_confirmation]
     if @user.change_password(params[:user][:password])
-        redirect_to login_path, success: t('.success')
+      redirect_to login_path, success: t('.success')
     else
-        flash.now[:danger] = t('.failure')
-        render :edit, status: :unprocessable_entity
+      flash.now[:danger] = t('.failure')
+      render :edit, status: :unprocessable_entity
     end
   end
 end

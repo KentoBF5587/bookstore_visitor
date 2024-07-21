@@ -1,4 +1,5 @@
 sorcery:
   google_callback_url: 'https://bookstore-visitor.fly.dev/oauth/callback?provider=google'
 default_url_options:
-  host: 'https://bookstore-visitor.fly.dev'
+  protocol: 'https'
+  host: 'bookstore-visitor.fly.dev'

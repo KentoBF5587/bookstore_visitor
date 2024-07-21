@@ -4,7 +4,13 @@
 
 
   <h3>概要</h3>
-  <p>このアプリでは<strong><%= link_to "①本屋を探す機能", how_to_use_path(anchor: 'search_bookstore') %>、<%= link_to "②本屋を新規登録する機能", how_to_use_path(anchor: 'new_bookstore') %>、<%= link_to "③推し本屋を紹介する機能", how_to_use_path(anchor: 'review_bookstore') %>、<%= link_to "④”行きたい本屋”をマークする機能", how_to_use_path(anchor: 'wanna_go_bookstore') %></strong>があります</p>
+  <p>このアプリでは<strong><%= link_to "①本屋を探す機能", how_to_use_path(anchor: 'search_bookstore') %>、
+  <%= link_to "②本屋を新規登録する機能", how_to_use_path(anchor: 'new_bookstore') %>、
+  <%= link_to "③推し本屋を紹介する機能", how_to_use_path(anchor: 'review_bookstore') %>、
+  <%= link_to "④”行きたい本屋”をマークする機能", how_to_use_path(anchor: 'wanna_go_bookstore') %>、
+  <%= link_to "⑤”推し本屋”で買った本を記録する機能", how_to_use_path(anchor: 'purchase_history') %>
+  
+  </strong>があります</p>
 
   <h4 id="search_bookstore">①本屋を探す機能</h4>
   <div class="col-sm-12 col-lg-4">
@@ -52,6 +58,17 @@
   2. クリックすると”しおり”が青く塗りつぶされたらマーク成功です。ヘッダー画面の自分のアカウント名をクリックし、「行きたい本屋」をクリック<%= image_tag "explaination_16.png", class: "mb-3" %>
   3. 自分がマークした本屋の一覧をここで確認できます<%= image_tag "explaination_17.png", class: "mb-3" %>
   
+</div>
+
+<h4 id="purchase_history">⑤”推し本屋”で買った本を記録する</h4>
+
+  <p>推し本屋で買った本を記録しましょう</p>
+  <div class="row">
+  1. まずは<%= link_to "おすすめ文を書いてみましょう。", how_to_use_path(anchor: 'review_bookstore') %>これであなたの"推し本屋"が出来ました。おすすめ文リストに一覧が表示されます。<%= image_tag "explaination_20.png", class: "mb-3" %>
+  2. ユーザーページの「おすすめ文リスト」の右側の「推し活リスト」には、買った本を記録出来ます。<%= image_tag "explaination_21.png", class: "mb-3" %>
+  3. 本屋の名前にはあなたがおすすめ文を書いた本屋が選択出来ます。<%= image_tag "explaination_22.png", class: "mb-3" %>
+  4. 書いてみましょう。<%= image_tag "explaination_23.png", class: "mb-3" %>
+  5.作成されると以下のように表示されます。<%= image_tag "explaination_24.png", class: "mb-3" %>
 </div>
 
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_14_070624) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_24_091242) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +47,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_14_070624) do
     t.index ["bookstore_id"], name: "index_purchase_histories_on_bookstore_id"
     t.index ["store_review_id"], name: "index_purchase_histories_on_store_review_id"
     t.index ["user_id"], name: "index_purchase_histories_on_user_id"
+  end
+
+  create_table "question_points", force: :cascade do |t|
+    t.boolean "answer", null: false
+    t.integer "point", null: false
+    t.bigint "question_id", null: false
+    t.bigint "result_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_question_points_on_question_id"
+    t.index ["result_id"], name: "index_question_points_on_result_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "store_reviews", force: :cascade do |t|
@@ -110,6 +134,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_14_070624) do
   add_foreign_key "purchase_histories", "bookstores"
   add_foreign_key "purchase_histories", "store_reviews"
   add_foreign_key "purchase_histories", "users"
+  add_foreign_key "question_points", "questions"
+  add_foreign_key "question_points", "results"
   add_foreign_key "store_reviews", "bookstores"
   add_foreign_key "store_reviews", "users"
   add_foreign_key "tag_relations", "bookstores"

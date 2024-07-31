@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   end
   resources :wanna_go_bookstores, only: %i[create destroy]
   resources :password_resets, only: %i[new edit create update]
+  resources :questions, only: %i[index create] do
+    collection do
+      get :result
+    end
+  end
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 

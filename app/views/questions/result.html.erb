@@ -1,0 +1,19 @@
+
+
+<div class="container">
+  <div class="text-center">
+    <p>あなたのおすすめは</p>
+    <p><strong><%= @your_result.title %></strong>です</p>
+    <p><%= @your_result.description %><p>
+    <div>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= root_url %>" data-text="<%= @your_result.title %>がおすすめに出ました！　好きな本屋ありますか？「ほんやがたり」で見つかるかもしれません。" data-hashtags="ほんやがたり" data-show-count="false">Xで共有する</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div data-turbo="false" class="mt-3">
+    <%= link_to "もう1度診断してみる", questions_path, class: "btn btn-success" %>
+    </div>
+    <div class="mt-3">
+    <%= link_to "トップへ戻る", root_path, class: "btn btn-success" %>
+    </div>
+  </div>
+</div>

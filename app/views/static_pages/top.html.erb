@@ -6,12 +6,25 @@
 <p>あなたの”推し本屋”聞かせてください</p>
 <%= link_to "本屋を探す", bookstores_path, class: "btn btn-success mb-3" %>
 
-<h3>出来ること</h3>
-<p>あなたの"推し本屋"を語る、見つける</p>
-<p>"推し本屋"で買った本を記録する</p>
-<h3>このアプリを共有する</h3>
-<p>本屋好きに届いてもらえたら嬉しいです</p>
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= root_url %>" data-text="好きな本屋ありますか？「ほんやがたり」で見つかるかもしれません。" data-hashtags="ほんやがたり,バトラン" data-show-count="false">Xで共有する</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="row">
+  <div class="col">
+  <h3>出来ること</h3>
+    <p>あなたの"推し本屋"を語る、見つける</p>
+    <p>"推し本屋"で買った本を記録する</p>
+    <p>診断機能で遊ぶ</p>
+  </div>
 
+  <div class="col">
+  <h3>現在の登録数</h3>
+    <p>”推し本屋”：<%= @bookstore.count %>店</p>
+    <p>”おすすめ文”：<%= @store_review.count %>件</p>
+  </div>
+
+  <div class="col">
+  <h3>このアプリを共有する</h3>
+    <p>本屋好きに届けば嬉しいです</p>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= root_url %>" data-text="好きな本屋ありますか？「ほんやがたり」で見つかるかもしれません。" data-hashtags="ほんやがたり" data-show-count="false">Xで共有する</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</div>
 </div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="text-center">
+  <h3>診断機能</h3>
+  
+  <div id="start-description">
+  <p>このコーナーでは、6つの質問に答える事であなたにおすすめの本屋を紹介します。</p>
+  <p>※全6種類</p>
+  </div>
+  <button type="button" id="start-questions" class="btn btn-success">診断を始める</button>
+  <%= form_with model: @your_result, url: questions_path, data: { turbo: false} do |f| %>
+    <div class="error-message d-none text-danger" id="error_message">選択してください</div>
+    
+    <% @questions.each_with_index do |question, index| %>
+  <div class="d-none" id="question_<%= index+1 %>">
+    <h3>質問<%= index + 1 %></h3>
+    <p><%= question.title %></p>
+      <%= f.radio_button "answers[#{index + 1}]", "true", data: { question_id: index  + 1} %> はい
+      <%= f.radio_button "answers[#{index + 1}]", "false", data: { question_id: index + 1} %> いいえ
+  </div>
+
+  <% end %>
+  <div class="mt-2">
+  <button type="button" data-action="previous-question" id="previous_button"  class="btn btn-success d-none">戻る</button>
+  <button type="button" data-action="next-question" id="next_button"  class="btn btn-success d-none">次へ</button>
+  <%= f.submit "結果", id: "submit-button", class: "btn btn-success d-none" %>
+  </div>
+  <% end %>
+  </div>
+</div>

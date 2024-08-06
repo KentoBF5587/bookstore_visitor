@@ -4,5 +4,5 @@ class QuestionPoint < ApplicationRecord
 
   belongs_to :question
   belongs_to :result
-  
+
 end

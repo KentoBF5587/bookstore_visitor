@@ -1,3 +1,16 @@
-.pagination>.active>a {     
-    background: #b8860b;     /*背景の色を変える*/
-  }
+.page-item.active .page-link {
+  background-color: #A0522D;
+  border-color: #A0522D;
+}
+
+.a page-link {
+  color: #A0522D;
+}
+
+.page-item a:hover {
+  color: #A0522D;
+}
+
+.page-item a {
+  color: #A0522D;
+}

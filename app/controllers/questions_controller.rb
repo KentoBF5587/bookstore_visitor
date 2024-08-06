@@ -7,13 +7,12 @@ class QuestionsController < ApplicationController
 
   def create
     answers = answer_params
-    puts "Answers: #{answers.inspect}"
 
     @result_points = Hash.new(0)
 
     answers.each do |index, answer|
-      if answer !="true" && answer !="false"
-        flash[:danger] = "想定されていない回答です"
+      if answer !='true' && answer !='false'
+        flash[:danger] = t('.failure')
         return redirect_to questions_path
       end
 
@@ -41,11 +40,11 @@ class QuestionsController < ApplicationController
     if your_result_id
       @your_result = Result.find_by(id: your_result_id)
       if @your_result.nil?
-        redirect_to root_path, danger: "診断に失敗しました"
+        redirect_to root_path, danger: t('.failure')
       end
       session.delete(:result_id)
     else
-      redirect_to root_path, danger: "診断に失敗しました"
+      redirect_to root_path, danger: t('.failure')
     end
   end
 
@@ -54,5 +53,4 @@ class QuestionsController < ApplicationController
   def answer_params
     params.require(:answers)
   end
-
 end
